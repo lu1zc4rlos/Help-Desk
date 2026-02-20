@@ -1,10 +1,14 @@
 package com.luizcarlos.omegatechapi.model.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TicketResponseDTO {
     private Long id;
     private String titulo;
