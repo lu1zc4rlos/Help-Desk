@@ -101,7 +101,7 @@ public class ChatService {
         }
     }
 
-    private TicketResponseDTO converterParaDTO(Ticket ticket){
+    protected TicketResponseDTO converterParaDTO(Ticket ticket){
 
         String titulo = converterTipoProblema(ticket.getTitulo());
         String prioridade = converterPrioridade(ticket.getPrioridade());
