@@ -1,5 +1,6 @@
 ## 🚀 OmegaTech API – Sistema de Help Desk
 API REST desenvolvida em Java com arquitetura em camadas, voltada para gerenciamento de chamados técnicos (Help Desk), autenticação segura com JWT e integração com serviços externos.
+---
 > 🚧 *Projeto em desenvolvimento contínuo — Backend funcional e estruturado, com frontend em evolução futura.
 
 ## 📖 Sobre o Projeto
@@ -14,6 +15,5 @@ A OmegaTech API foi desenvolvida com o objetivo de simular um sistema real de su
 * **Envio de e-mails automáticos**: Notificações automáticas do sistema.
 * **Integração com serviço externo de IA**: Funcionalidades inteligentes integradas.
 * **Controle completo de status e prioridade**: Organização eficiente das demandas.
-
 ---
 > **Foco principal:** Aplicar boas práticas de desenvolvimento backend e organização em camadas.
