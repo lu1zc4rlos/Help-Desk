@@ -50,3 +50,17 @@ A OmegaTech API foi desenvolvida com o objetivo de simular um sistema real de su
 * Tratamento centralizado de exceções
 * Controle de acesso por perfil
 > Isso garante autenticação segura e controle de permissões.
+
+<br>
+
+## 🛠️ Tecnologias Utilizadas
+
+* Java
+* Spring Boot
+* Spring Security
+* JWT
+* JPA / Hibernate
+* Maven
+* Testes unitários (JUnit)
+* Integração com API externa (OpenAI)
+* Envio de e-mails via serviço SMTP
