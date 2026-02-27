@@ -1,6 +1,6 @@
 ## 🚀 OmegaTech API – Sistema de Help Desk
 API REST desenvolvida em Java com arquitetura em camadas, voltada para gerenciamento de chamados técnicos (Help Desk), autenticação segura com JWT e integração com serviços externos.
-> 🚧 *Projeto em desenvolvimento contínuo — Backend funcional e estruturado, com frontend em evolução futura.
+> 🚧 Projeto em desenvolvimento contínuo — Backend funcional e estruturado, com frontend em evolução futura.
 
 <br>
 
@@ -9,14 +9,14 @@ A OmegaTech API foi desenvolvida com o objetivo de simular um sistema real de su
 
 ### A aplicação permite:
 
-* Cadastro e autenticação de usuários**: Segurança no acesso à plataforma.
-* Controle de perfis**: Diferenciação entre Administrador, Técnico e Usuário.
-* Abertura e gerenciamento de tickets**: Fluxo completo de chamados técnicos.
-* Recuperação de senha com token**: Processo seguro via e-mail.
-* Envio de e-mails automáticos**: Notificações automáticas do sistema.
-* Integração com serviço externo de IA**: Funcionalidades inteligentes integradas.
-* Controle completo de status e prioridade**: Organização eficiente das demandas.
-> Foco principal:** Aplicar boas práticas de desenvolvimento backend e organização em camadas.
+* Cadastro e autenticação de usuários: Segurança no acesso à plataforma.
+* Controle de perfis: Diferenciação entre Administrador, Técnico e Usuário.
+* Abertura e gerenciamento de tickets: Fluxo completo de chamados técnicos.
+* Recuperação de senha com token: Processo seguro via e-mail.
+* Envio de e-mails automáticos: Notificações automáticas do sistema.
+* Integração com serviço externo de IA: Funcionalidades inteligentes integradas.
+* Controle completo de status e prioridade: Organização eficiente das demandas.
+> Foco principal: Aplicar boas práticas de desenvolvimento backend e organização em camadas.
 
 <br>
 
@@ -64,3 +64,88 @@ A OmegaTech API foi desenvolvida com o objetivo de simular um sistema real de su
 * Testes unitários (JUnit)
 * Integração com API externa (OpenAI)
 * Envio de e-mails via serviço SMTP
+
+## 📌 Funcionalidades Implementadas
+
+* ✔ Cadastro de usuários
+* ✔ Login com geração de token JWT
+* ✔ Recuperação de senha com código
+* ✔ Controle de perfil (ADMIN / TECNICO / USUARIO)
+* ✔ Abertura de tickets
+* ✔ Alteração de status e prioridade
+* ✔ Listagem filtrada de chamados
+* ✔ Envio automático de e-mail
+* ✔ Integração com IA para suporte via chat
+* ✔ Tratamento global de exceções
+* ✔ Testes unitários em serviços principais
+
+<br>
+
+## 📂 Estrutura do Projeto
+
+```bash
+src/main/java/com.luizcarlos.omegatechapi/
+
+├── config/                → Configurações da aplicação
+│   ├── SecurityConfig
+│   ├── JwtAuthenticationFilter
+│   ├── CustomAuthenticationEntryPoint
+│   ├── RestTemplateConfig
+│   └── exception/         → Tratamento global de exceções
+│
+├── controller/            → Camada de exposição da API (endpoints REST)
+│
+├── service/               → Regras de negócio
+│
+├── repository/            → Acesso ao banco de dados (JPA)
+│
+├── model/
+│   ├── entity/            → Entidades JPA
+│   ├── dto/               → Objetos de transferência de dados
+│   ├── enums/             → Enumerações de domínio
+│   └── request/           → Objetos de requisição
+│
+└── OmegtechapiApplication → Classe principal da aplicação
+```
+
+<br>
+
+## 🧪 Testes
+
+### O projeto possui testes unitários para:
+
+* AuthService
+* ChatService
+* EmailService
+* GeradorDeMatricula
+* UserDetailsServiceImpl
+> Com foco na validação das regras de negócio.
+
+<br>
+
+## 🚀 Como Executar
+
+<ol>
+   <li>Clone o repositório</li>
+   <li>Configure o application.properties</li>
+   <li>Execute via Maven:</li>
+</ol>
+
+```bash
+mvn spring-boot:run
+```
+
+<br>
+
+## 🔮 Próximos Passos
+
+* Evolução do frontend para versão Web
+* Ampliação da cobertura de testes
+* Documentação da API com Swagger
+* Deploy em ambiente cloud
+
+##  👨‍💻 Sobre o Projeto e Objetivo
+
+Este projeto foi desenvolvido com foco no aprimoramento e consolidação de competências em desenvolvimento backend com Java e Spring Boot.
+
+O objetivo principal é evoluir continuamente em arquitetura de software, segurança com JWT, boas práticas REST e testes unitários, preparando a aplicação para cenários reais de mercado e futuras evoluções, incluindo frontend web integrado.
