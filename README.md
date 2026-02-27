@@ -14,7 +14,6 @@ A OmegaTech API foi desenvolvida com o objetivo de simular um sistema real de su
 * Envio de e-mails automáticos**: Notificações automáticas do sistema.
 * Integração com serviço externo de IA**: Funcionalidades inteligentes integradas.
 * Controle completo de status e prioridade**: Organização eficiente das demandas.
----
 > Foco principal:** Aplicar boas práticas de desenvolvimento backend e organização em camadas.
 
 ## 🏗️ Arquitetura
