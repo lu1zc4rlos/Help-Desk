@@ -17,3 +17,21 @@ A OmegaTech API foi desenvolvida com o objetivo de simular um sistema real de su
 * **Controle completo de status e prioridade**: Organização eficiente das demandas.
 ---
 > **Foco principal:** Aplicar boas práticas de desenvolvimento backend e organização em camadas.
+
+## 🏗️ Arquitetura
+
+### O projeto foi estruturado utilizando arquitetura em camadas:
+
+* **Controller → Camada de exposição da API
+* **Service → Regras de negócio
+* **Repository → Acesso ao banco de dados
+* **DTOs → Transferência de dados
+* **Entities → Modelos de domínio
+* **Config → Configurações de segurança e autenticação
+
+### Essa estrutura garante:
+
+* **Separação de responsabilidades
+* **Código limpo e organizado
+* **Facilidade de manutenção e testes
+* **Escalabilidade
