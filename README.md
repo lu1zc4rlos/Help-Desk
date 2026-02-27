@@ -1,11 +1,12 @@
 ## 🚀 OmegaTech API – Sistema de Help Desk
 API REST desenvolvida em Java com arquitetura em camadas, voltada para gerenciamento de chamados técnicos (Help Desk), autenticação segura com JWT e integração com serviços externos.
-> 🚧 Projeto em desenvolvimento contínuo — Backend funcional e estruturado, com frontend em evolução futura.
+> 🚧 Projeto em desenvolvimento contínuo — Backend funcional e estruturado, com frontend em evolução futura, foco em boas práticas, segurança e escalabilidade.
 
 <br>
 
 ## 📖 Sobre o Projeto
-A OmegaTech API foi desenvolvida com o objetivo de simular um sistema real de suporte técnico, aplicando conceitos sólidos de arquitetura, segurança e organização de código.
+A OmegaTech API foi desenvolvida com o objetivo de simular um sistema real de suporte técnico, aplicando conceitos sólidos de arquitetura, segurança e organização de código. <br>
+A API segue princípios RESTful, utilizando padrões HTTP adequados e respostas padronizadas de erro.
 
 ### A aplicação permite:
 
@@ -49,7 +50,7 @@ A OmegaTech API foi desenvolvida com o objetivo de simular um sistema real de su
 * Filtro customizado (JwtAuthenticationFilter)
 * Tratamento centralizado de exceções
 * Controle de acesso por perfil
-> Isso garante autenticação segura e controle de permissões.
+> A segurança é implementada com filtros personalizados e controle de acesso baseado em perfil (Role-based access control).
 
 <br>
 
@@ -119,7 +120,7 @@ src/main/java/com.luizcarlos.omegatechapi/
 * EmailService
 * GeradorDeMatricula
 * UserDetailsServiceImpl
-> Com foco na validação das regras de negócio.
+> Os testes unitários foram implementados utilizando JUnit e Mockito, com foco no isolamento da camada de serviço.
 
 <br>
 
@@ -143,6 +144,17 @@ mvn spring-boot:run
 * Ampliação da cobertura de testes
 * Documentação da API com Swagger
 * Deploy em ambiente cloud
+
+<br>
+
+## 🧩 Estrutura do Repositório
+
+### Este repositório contém:
+
+* backend/omegatechapi → API REST em Java (Spring Boot)
+* frontend_prototipo → Protótipo SPA em desenvolvimento
+
+<br>
 
 ##  👨‍💻 Sobre o Projeto e Objetivo
 
