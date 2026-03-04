@@ -1,5 +1,6 @@
 package com.luizcarlos.omegatechapi.controller;
 
+import com.luizcarlos.omegatechapi.config.exception.UnauthorizedException;
 import com.luizcarlos.omegatechapi.model.dto.RespostaTicketDTO;
 import com.luizcarlos.omegatechapi.model.dto.StatusUpdateDTO;
 import com.luizcarlos.omegatechapi.model.dto.TicketResponseDTO;
@@ -38,6 +39,10 @@ public class TicketController {
     public ResponseEntity<List<TicketResponseDTO>> getMeusTickets(
             @RequestParam(required = false) String status,
             @AuthenticationPrincipal Usuario usuarioAutenticado) {
+
+        if (usuarioAutenticado == null) {
+            throw new UnauthorizedException("Usuário não autenticado");
+        }
 
         Long clienteId = usuarioAutenticado.getId();
         List<TicketResponseDTO> tickets = ticketService.findTicketsByUserIdAndStatus(clienteId, status);

@@ -118,6 +118,12 @@ public class JwtService {
     @Value("${application.security.jwt.expiration-ms}")
     private long expirationMs;
 
+    public JwtService(String secretKey, long expirationMs) {
+        this.secretKey = secretKey;
+        this.expirationMs = expirationMs;
+    }
+
+    public JwtService(){}
 
     public String gerarToken(Usuario usuario) {
         Map<String, Object> extraClaims = new HashMap<>();
@@ -144,7 +150,7 @@ public class JwtService {
         return (userIdFromToken.equals(userIdFromUserDetails)) && !isTokenExpired(token);
     }
 
-    private boolean isTokenExpired(String token) {
+    protected boolean isTokenExpired(String token) {
         return extractExpiration(token).before(new Date());
     }
 
