@@ -23,18 +23,27 @@ import java.util.stream.Collectors;
 
 @Service
 public class TecnicoService {
-    @Autowired
-    private UsuarioRepository usuarioRepository;
 
+  //  @Autowired
+    private UsuarioRepository usuarioRepository;
+ //   @Autowired
+    private TecnicoRepository tecnicoRepository;
+  //  @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
+/*
     public TecnicoService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
+*/
+    public TecnicoService(
+            UsuarioRepository usuarioRepository,
+            TecnicoRepository tecnicoRepository,
+            BCryptPasswordEncoder passwordEncoder) {
 
-    @Autowired
-    private TecnicoRepository tecnicoRepository;
-
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
+        this.usuarioRepository = usuarioRepository;
+        this.tecnicoRepository = tecnicoRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Transactional
     public void criarTecnico(Usuario novoTecnicoCadastrado) {
