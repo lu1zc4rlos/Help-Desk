@@ -30,6 +30,16 @@ public class TecnicoService {
         this.usuarioRepository = usuarioRepository;
     }
 
+    public TecnicoService(
+            UsuarioRepository usuarioRepository,
+            TecnicoRepository tecnicoRepository,
+            BCryptPasswordEncoder passwordEncoder) {
+
+        this.usuarioRepository = usuarioRepository;
+        this.tecnicoRepository = tecnicoRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
+
     @Autowired
     private TecnicoRepository tecnicoRepository;
 
