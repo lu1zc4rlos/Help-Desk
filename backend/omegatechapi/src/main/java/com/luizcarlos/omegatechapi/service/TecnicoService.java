@@ -31,9 +31,9 @@ public class TecnicoService {
     //@Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    //public TecnicoService(UsuarioRepository usuarioRepository) {
+    /*public TecnicoService(UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
-    }
+    }*/
 
     public TecnicoService(
             UsuarioRepository usuarioRepository,
