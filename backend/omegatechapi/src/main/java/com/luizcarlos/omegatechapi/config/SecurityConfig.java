@@ -66,9 +66,17 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/admin/cadastro").permitAll()
                         .requestMatchers(HttpMethod.GET, "/admin/tecnicos").permitAll()
                         .requestMatchers(HttpMethod.GET, "/admin/respondidos").permitAll()
+                        .requestMatchers(
+                                "/swagger-ui.html",
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**"
+                        )
+                        .permitAll()
+
 
                         // O resto precisa de token
                         .anyRequest().authenticated()
+
                 )
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
