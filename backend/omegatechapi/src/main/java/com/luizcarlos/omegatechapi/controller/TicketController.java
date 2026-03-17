@@ -7,6 +7,7 @@ import com.luizcarlos.omegatechapi.model.dto.TicketResponseDTO;
 import com.luizcarlos.omegatechapi.model.entity.Usuario;
 import com.luizcarlos.omegatechapi.model.request.MensagemRequest;
 import com.luizcarlos.omegatechapi.service.TicketService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/tickets")
 @RequiredArgsConstructor
-
+@Tag(name = "Chamados", description = "Endpoints para abertura, consulta e gerenciamento de chamados técnicos")
 public class TicketController {
 
     @Autowired

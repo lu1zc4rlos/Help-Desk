@@ -3,6 +3,7 @@ package com.luizcarlos.omegatechapi.service;
 
 import com.luizcarlos.omegatechapi.config.exception.*;
 import com.luizcarlos.omegatechapi.model.dto.CadastroUsuarioDTO;
+import com.luizcarlos.omegatechapi.model.dto.LoginRequestDTO;
 import com.luizcarlos.omegatechapi.model.entity.TokenRecuperacao;
 import com.luizcarlos.omegatechapi.model.entity.Usuario;
 import com.luizcarlos.omegatechapi.model.enums.Perfil;
@@ -43,7 +44,7 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
         this.jwtService = jwtService;
     }
-    public AuthResponseDTO loginUsuario(Usuario request) {
+    public AuthResponseDTO loginUsuario(LoginRequestDTO request) {
         Usuario usuario = usuarioRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new ResourceNotFoundException("Credenciais inválidas"));
 

@@ -20,6 +20,7 @@ import com.luizcarlos.omegatechapi.model.dto.TicketResponseDTO;
 import com.luizcarlos.omegatechapi.model.entity.Usuario;
 import com.luizcarlos.omegatechapi.service.TecnicoService;
 import com.luizcarlos.omegatechapi.service.TicketService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
@@ -31,6 +32,7 @@ import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/admin")
+@Tag(name = "Administração", description = "Endpoints administrativos para gerenciamento de técnicos do sistema")
 public class AdminController {
     @Autowired
     private TecnicoService tecnicoService;
