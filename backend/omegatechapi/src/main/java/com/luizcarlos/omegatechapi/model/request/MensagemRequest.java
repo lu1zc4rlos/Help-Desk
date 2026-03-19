@@ -7,6 +7,6 @@ import lombok.Data;
 @Data
 public class MensagemRequest {
 
-    @Schema(example = "usuario@email.com")
+    @Schema(example = "estou com um problema de helpdesk")
     private String mensagem;
 }
