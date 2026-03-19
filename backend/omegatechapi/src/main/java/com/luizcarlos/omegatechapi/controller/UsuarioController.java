@@ -1,9 +1,7 @@
 package com.luizcarlos.omegatechapi.controller;
 
 import com.luizcarlos.omegatechapi.model.dto.CadastroUsuarioDTO;
-import com.luizcarlos.omegatechapi.model.dto.ErrorResponseDTO;
 import com.luizcarlos.omegatechapi.model.dto.LoginRequestDTO;
-import com.luizcarlos.omegatechapi.model.entity.Usuario;
 import com.luizcarlos.omegatechapi.model.request.AlterarSenhaRequest;
 import com.luizcarlos.omegatechapi.model.request.ResetarSenhaComCodigo;
 import com.luizcarlos.omegatechapi.model.request.SolicitarCodigoRequest;

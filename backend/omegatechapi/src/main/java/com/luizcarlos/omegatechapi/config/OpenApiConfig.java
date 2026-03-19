@@ -3,11 +3,17 @@ package com.luizcarlos.omegatechapi.config;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.Components;
+import io.swagger.v3.oas.models.security.SecurityRequirement;
+import io.swagger.v3.oas.models.security.SecurityScheme;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+
 @Configuration
 public class OpenApiConfig {
+
 
     @Bean
     OpenAPI customOpenApi(){
@@ -18,7 +24,20 @@ public class OpenApiConfig {
                         .description("API de gerenciamento de chamados técnicos")
                         .contact(new Contact()
                                 .name("Luiz Carlos")
-                                .email("jujuni1000.carlos@gmail.com")));
+                                .email("jujuni1000.carlos@gmail.com")))
+
+                .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
+
+                .components(new Components()
+                        .addSecuritySchemes("bearerAuth",
+                                new SecurityScheme()
+                                        .name("bearerAuth")
+                                        .type(SecurityScheme.Type.HTTP)
+                                        .scheme("bearer")
+                                        .bearerFormat("JWT")
+                        )
+                );
 
     }
+
 }

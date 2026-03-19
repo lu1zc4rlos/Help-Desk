@@ -14,6 +14,7 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/tickets")
 @RequiredArgsConstructor
+@SecurityRequirement(name = "bearerAuth")
 @Tag(name = "Chamados", description = "Endpoints para abertura, consulta e gerenciamento de chamados técnicos")
 public class TicketController {
 
@@ -35,8 +37,7 @@ public class TicketController {
     private final TicketService ticketService;
 
     @Operation(
-            summary = "Criar Ticket",
-            description = "Criação de ticket"
+            summary = "Criar ticket"
     )
     @ApiResponses( value = {
             @ApiResponse(responseCode = "201", description = "Created", content = @Content),
@@ -53,8 +54,7 @@ public class TicketController {
     }
 
     @Operation(
-            summary = "Buscar Tickets",
-            description = "Buscar tickets do usuário"
+            summary = "Buscar tickets"
     )
     @ApiResponses( value = {
             @ApiResponse(
@@ -81,8 +81,8 @@ public class TicketController {
     }
 
     @Operation(
-            summary = "Atualizar status",
-            description = "Atualizar status do ticket"
+            summary = "Atualizar status do ticket",
+            description = "Apenas técnicos podem alterar o status de um ticket (ex: ABERTO → EM_ANDAMENTO →  CONCLUIDO)"
     )
     @ApiResponses( value = {
             @ApiResponse(responseCode = "200", description = "OK", content = @Content),
@@ -104,8 +104,7 @@ public class TicketController {
     }
 
     @Operation(
-            summary = "Buscar Ticket",
-            description = "Buscar ticket do usuário por id"
+            summary = "Buscar ticket por ID"
     )
     @ApiResponses( value = {
             @ApiResponse(
@@ -130,8 +129,8 @@ public class TicketController {
     }
 
     @Operation(
-            summary = "Respondendo Ticket",
-            description = "Respondendo ticket do usuário pelo técnico"
+            summary = "Respondendo ticket",
+            description = "Permite que um técnico responda um ticket aberto pelo cliente"
     )
     @ApiResponses( value = {
             @ApiResponse(responseCode = "200", description = "OK", content = @Content),
@@ -154,8 +153,7 @@ public class TicketController {
     }
 
     @Operation(
-            summary = "Deletar ticket",
-            description = "Deletando ticket do usuário"
+            summary = "Deletar ticket"
     )
     @ApiResponses( value = {
             @ApiResponse(responseCode = "204", description = "No Content", content = @Content),
