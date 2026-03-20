@@ -16,7 +16,6 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "usuarios_perfis")
-
 public class Usuario implements UserDetails {
     @Schema(hidden = true)
     @Id
