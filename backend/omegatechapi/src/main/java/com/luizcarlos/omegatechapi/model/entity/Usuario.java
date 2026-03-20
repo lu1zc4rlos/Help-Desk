@@ -76,6 +76,4 @@ public class Usuario implements UserDetails {
         }
         return List.of(new SimpleGrantedAuthority(this.perfil.name()));
     }
-
-
 }
