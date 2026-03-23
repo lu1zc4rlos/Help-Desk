@@ -53,7 +53,6 @@ public class AdminController {
         this.ticketService = ticketService;
     }
 
-
     @Operation(
             summary = "Cadastro do técnico",
             description = "Cadastro dos novos técnicos do sistema"
