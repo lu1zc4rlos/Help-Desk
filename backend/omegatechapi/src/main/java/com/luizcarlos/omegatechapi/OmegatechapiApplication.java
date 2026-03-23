@@ -13,5 +13,4 @@ public class OmegatechapiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OmegatechapiApplication.class, args);
 	}
-
 }
