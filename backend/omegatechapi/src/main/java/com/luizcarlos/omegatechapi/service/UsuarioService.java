@@ -60,7 +60,7 @@ public class UsuarioService {
 
         return new AuthResponseDTO(usuario.getNome(), token, usuario.getPerfil().toString());
     }
-    
+
     public AuthResponseDTO cadastrarNovoUsuario(CadastroUsuarioDTO dto) {
 
         if (usuarioRepository.existsByEmail(dto.getEmail())) {
