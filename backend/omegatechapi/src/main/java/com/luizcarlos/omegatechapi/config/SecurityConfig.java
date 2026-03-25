@@ -13,6 +13,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -74,20 +76,30 @@ public class SecurityConfig {
     }
 
     @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**").allowedOrigins("*").allowedMethods("*");
+            }
+        };
+    }
+
+    @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                // 1. Configuração Explicita do CORS ligada ao Bean lá embaixo
+
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        // 2. Libera o Preflight (OPTIONS) para qualquer rota
+
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
 
-                        // Rotas Públicas
+
                         .requestMatchers("/usuarios/login", "/auth/login").permitAll()
                         .requestMatchers("/usuarios/cadastro").permitAll()
-                        // ... suas outras rotas ...
+
                         .requestMatchers(HttpMethod.PUT, "/usuarios/alterar_senha").permitAll()
                         .requestMatchers(HttpMethod.POST, "/usuarios/solicitar_codigo").permitAll()
                         .requestMatchers(HttpMethod.POST, "/usuarios/validar_codigo").permitAll()
@@ -109,7 +121,7 @@ public class SecurityConfig {
                         .permitAll()
 
 
-                        // O resto precisa de token
+
                         .anyRequest().authenticated()
 
                 )
