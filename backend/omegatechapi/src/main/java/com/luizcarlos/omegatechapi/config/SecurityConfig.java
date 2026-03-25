@@ -57,7 +57,7 @@ public class SecurityConfig {
         config.setAllowedMethods(Arrays.asList(
                 "GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"
         ));
-        
+
         config.setAllowedHeaders(Arrays.asList(
                 "Authorization",
                 "Content-Type",
