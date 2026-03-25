@@ -1,5 +1,7 @@
 package com.luizcarlos.omegatechapi.config;
 
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.servers.Server;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -83,6 +85,12 @@ public class SecurityConfig {
                 registry.addMapping("/**").allowedOrigins("*").allowedMethods("*");
             }
         };
+    }
+
+    @Bean
+    public OpenAPI customOpenAPI() {
+        return new OpenAPI()
+                .addServersItem(new Server().url("https://help-desk-production-c937.up.railway.app").description("Production Server"));
     }
 
     @Bean
