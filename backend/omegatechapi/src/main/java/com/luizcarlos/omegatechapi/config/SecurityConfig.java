@@ -53,8 +53,6 @@ public class SecurityConfig {
 
         origins.add("https://seu-app.up.railway.app");
 
-        config.setAllowedOrigins(origins);
-
         config.setAllowedOrigins(Arrays.asList("*"));
 
         config.setAllowedMethods(Arrays.asList(
