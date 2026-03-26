@@ -55,6 +55,8 @@ public class SecurityConfig {
 
         config.setAllowedOrigins(origins);
 
+        config.setAllowedOrigins(Arrays.asList("*"));
+
         config.setAllowedMethods(Arrays.asList(
                 "GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"
         ));
