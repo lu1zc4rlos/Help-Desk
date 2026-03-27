@@ -87,18 +87,18 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
 
-                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
-
-
                         .requestMatchers("/usuarios/login").permitAll()
                         .requestMatchers("/usuarios/cadastro").permitAll()
-
+                        .requestMatchers(
+                                "/swagger-ui.html",
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**"
+                        )
+                        .permitAll()
                         .requestMatchers(HttpMethod.PUT, "/usuarios/alterar_senha").permitAll()
                         .requestMatchers(HttpMethod.POST, "/usuarios/solicitar_codigo").permitAll()
                         .requestMatchers(HttpMethod.POST, "/usuarios/validar_codigo").permitAll()
@@ -112,14 +112,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/admin/cadastro").permitAll()
                         .requestMatchers(HttpMethod.GET, "/admin/tecnicos").permitAll()
                         .requestMatchers(HttpMethod.GET, "/admin/respondidos").permitAll()
-                        .requestMatchers(
-                                "/swagger-ui.html",
-                                "/swagger-ui/**",
-                                "/v3/api-docs/**"
-                        )
-                        .permitAll()
-
-
+                        .requestMatchers("/admin/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 
                         .anyRequest().authenticated()
 
