@@ -96,7 +96,7 @@ public class SecurityConfig {
                         .requestMatchers("/admin/**").hasRole("ADMIN")
 
 
-                        .requestMatchers("/usuarios/login", "/auth/login").permitAll()
+                        .requestMatchers("/usuarios/login").permitAll()
                         .requestMatchers("/usuarios/cadastro").permitAll()
 
                         .requestMatchers(HttpMethod.PUT, "/usuarios/alterar_senha").permitAll()
